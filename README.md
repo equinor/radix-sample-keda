@@ -1,4 +1,4 @@
-# NOTE:! Repo moved
+# NOTE! Repo moved
 
 This repo has moved into [radix-public-site/examples](https://github.com/equinor/radix-public-site/tree/main/examples/radix-example-keda-servicebus) for easier maintenance :) 
 
