@@ -1,10 +1,10 @@
-# NOTE!
+# NOTE:! Repo moved
 
 This repo has moved into [radix-public-site/examples](https://github.com/equinor/radix-public-site/tree/main/examples/radix-example-keda-servicebus) for easier maintenance :) 
 
 
 
-# .NET Core worker processing Azure Service Bus Queue scaled by KEDA
+## .NET Core worker processing Azure Service Bus Queue scaled by KEDA
 A simple Docker container written in .NET that will receive messages from a Service Bus queue and scale via KEDA.
 
 The message processor will receive a single message at a time (per instance), and sleep for 2 second to simulate performing work. When adding a massive amount of queue messages, KEDA will drive the container to scale out according to the event source (Service Bus Queue).
@@ -17,7 +17,7 @@ This sample is a refactored version of the one found at https://github.com/kedac
 We Have removed all authentication options, and added AzureDefaultCredentials.
 The sample is also upgraded from Dotnet core 3.1 to Dotnet 8.
 
-## Configuring resources
+### Configuring resources
 
 Configure `terraform.tf` and modify `resource_group_name`, `location`, `name`, and `radix_app_name` (minium).
 
@@ -55,12 +55,12 @@ cd src/Radix.Samples.Dotnet.OrderGenerator; dotnet run
 # That's it, see you later!
 ```
 
-## Deployment
+### Deployment
 
 Update Radixconfig with your ClientID and endpoint details and enjoy 🎉
 
 
-### Radix Config Trigger details:
+#### Radix Config Trigger details:
 ```yaml
 metadata:
   name: <Your Radix App Name> # Change this!
@@ -90,7 +90,7 @@ metadata:
 ```
 
 
-### Terraform Keda details:
+#### Terraform Keda details:
 
 To configure Keda, create a managed identity, and assign it a federated credential, like this if you are using Terraform:
 ```terraform
@@ -108,5 +108,5 @@ resource "azurerm_federated_identity_credential" "keda" {
 > 
 > Note: This does not give their app access to your ServiceBus, only the trigger to read the count of messages.
 
-## Cleanup
+### Cleanup
 To cleanup your resources run `terraform destroy` and delete your app in Radix
