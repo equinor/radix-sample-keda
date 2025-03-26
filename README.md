@@ -1,3 +1,9 @@
+# NOTE!
+
+This repo has moved into [radix-public-site/examples](https://github.com/equinor/radix-public-site/tree/main/examples/radix-example-keda-servicebus) for easier maintenance :) 
+
+
+
 # .NET Core worker processing Azure Service Bus Queue scaled by KEDA
 A simple Docker container written in .NET that will receive messages from a Service Bus queue and scale via KEDA.
 
